@@ -6,12 +6,14 @@ const port = process.env.PORT || 8000;
 
 const app = express();
 
-//routes
-app.use("/api/posts", posts);
-
 //body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+//routes
+app.use("/api/posts", posts);
+
+
 
 
 app.get("/", (req, res) => {
